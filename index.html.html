@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Favicon setup -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CartPilot AI — Recover 10–20% More Abandoned Carts</title>
+  <meta name="description" content="CartPilot AI helps Shopify brands recover 10–20% more abandoned carts with AI-personalized email/SMS flows. Live in 7 days. 30‑day ROI guarantee." />
+  <!-- Tailwind CSS for utility-first styling -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Inter font for clean SaaS-style typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Global typography + smooth scroll between sections */
+    html, body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      scroll-behavior: smooth; /* enables smooth scrolling for anchor links */
+    }
+    /* Constrain content width for better readability */
+    .container { max-width: 1100px; }
+    /* Small pill badge styling (Tailwind @apply used conceptually here) */
+    .badge { font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.625rem; border-radius: 9999px; }
+    /* Glassmorphism card background */
+    .glass { background: rgba(255,255,255,0.7); backdrop-filter: saturate(180%) blur(8px); }
+    /* Reusable gradient used for logo and subtle backgrounds */
+    .gradient { background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 45%, #14b8a6 100%); }
+    /* Soft shadow for elevated components */
+    .shadow-soft { box-shadow: 0 10px 30px rgba(2,6,23,0.08); }
+    /* Thin inner ring used to visually separate cards from background */
+    .ring-muted { box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.08) inset; }
+    /* Utility to prefix list items with a checkmark symbol */
+    .check::before { content: '✓'; margin-right: .5rem; }
+    /* Small colored bullet used in hero feature list */
+    .dot { width: 8px; height: 8px; border-radius: 9999px; display: inline-block; margin-right: .5rem; }
+    /* Subtle pattern background (unused but available) */
+    .bg-stripe { background-image: radial-gradient(rgba(99,102,241,.15) 1px, transparent 1px); background-size: 10px 10px; }
+    /* Card hover effect for slight lift on hover */
+    .hover-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(2,6,23,0.12); }
+  </style>
+</head>
+<body class="antialiased text-gray-900" id="top">
+  <!-- Nav -->
+  <header class="w-full sticky top-0 z-30 bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-5 flex items-center justify-between">
+      <!-- Logo with clearer rocket icon inside gradient square -->
+      <a href="#top" class="flex items-center space-x-2">
+        <div class="w-8 h-8 rounded-xl gradient flex items-center justify-center">
+          <!-- Rocket icon: nose cone, body with window, fins, and flame -->
+          <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rocket body -->
+            <path d="M12 3C11 4.5 9 8 9 11C9 13 9.5 14 12 17C14.5 14 15 13 15 11C15 8 13 4.5 12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Window -->
+            <circle cx="12" cy="10" r="1.4" stroke="currentColor" stroke-width="1.4"/>
+            <!-- Fins -->
+            <path d="M9.5 14.5L7 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.5 14.5L17 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Flame -->
+            <path d="M12 17C11.3 18 11 19 11.2 20C11.4 20.8 11.8 21.3 12 21.5C12.2 21.3 12.6 20.8 12.8 20C13 19 12.7 18 12 17Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="text-xl font-extrabold tracking-tight">CartPilot <span class="text-indigo-600">AI</span></span>
+      </a>
+      <!-- Top navigation links (smooth scroll to sections) -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="#how" class="hover:text-indigo-600">How it works</a>
+        <a href="#features" class="hover:text-indigo-600">Features</a>
+        <a href="#pricing" class="hover:text-indigo-600">Offer</a>
+        <a href="#faq" class="hover:text-indigo-600">FAQ</a>
+      </nav>
+      <!-- Primary CTAs: view sample flow + book demo -->
+      <div class="flex items-center space-x-3">
+        <a href="#demo" class="hidden md:inline-flex px-4 py-2 rounded-lg border border-gray-300 hover:border-gray-400 text-sm font-semibold">See sample flow</a>
+        <a href="https://calendar.app.google/DkKrMCrem9SqJU2P8" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-semibold shadow-soft">Book demo</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <!-- Soft gradient background behind hero content -->
+    <div class="absolute inset-0 gradient opacity-[0.08]"></div>
+    <div class="container mx-auto px-4 pt-10 pb-12 md:pt-16 md:pb-16 relative">
+      <!-- Two-column layout: left = main pitch, right = supporting value card -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <!-- Left: main headline, subcopy, CTAs, and quick proof points -->
+        <div class="max-w-2xl">
+          <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight text-white">
+            Turn abandoned carts into <span class="text-indigo-200">recovered revenue</span>
+          </h1>
+          <p class="mt-4 text-lg text-gray-100">
+            CartPilot AI builds and manages AI‑personalized email/SMS flows for Shopify so you recover <span class="font-semibold">10–20% more abandoned carts</span>—without adding work to your team.
+          </p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3 items-start">
+            <a href="https://calendar.app.google/DkKrMCrem9SqJU2P8" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow-soft">Book a 15‑min demo</a>
+            <!-- Match formatting with primary button for stronger visual hierarchy -->
+            <a href="#how" class="px-6 py-3 rounded-xl bg-white text-indigo-700 font-semibold shadow-soft">How it works</a>
+          </div>
+          <div class="mt-6 grid grid-cols-2 gap-4 text-sm text-gray-100">
+            <div class="flex items-center"><span class="dot bg-green-400"></span>Set up in 7 days</div>
+            <div class="flex items-center"><span class="dot bg-blue-400"></span>Klaviyo native (no rip‑and‑replace)</div>
+            <div class="flex items-center"><span class="dot bg-purple-400"></span>10% holdout to prove lift</div>
+            <div class="flex items-center"><span class="dot bg-yellow-300"></span>No engineering resources needed</div>
+          </div>
+        </div>
+        <!-- Right: hero card summarizing why customers should use the service -->
+        <div class="glass rounded-2xl p-5 shadow-soft ring-muted">
+          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600">Why teams use CartPilot AI</p>
+          <h2 class="mt-3 font-bold text-lg">Stop leaking paid traffic. Recover more from what you already have.</h2>
+          <ul class="mt-4 space-y-2 text-sm text-gray-700">
+            <!-- All bullets use a consistent purple color for stronger visual identity -->
+            <li class="flex items-start"><span class="dot bg-purple-500 mt-1"></span><span>AI‑written emails and SMS tuned to your products, objections, and AOV.</span></li>
+            <li class="flex items-start"><span class="dot bg-purple-500 mt-1"></span><span>Done‑for‑you setup and weekly optimization inside your existing Klaviyo.</span></li>
+            <li class="flex items-start"><span class="dot bg-purple-500 mt-1"></span><span>Incremental lift measured with a 10% control group—no guessing.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI Strip: quick stats to reinforce value -->
+  <section class="bg-gray-50 border-y border-gray-100">
+    <div class="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div>
+        <div class="text-3xl font-extrabold">~70%</div>
+        <div class="text-sm text-gray-600">Average carts abandoned</div>
+      </div>
+      <div>
+        <div class="text-3xl font-extrabold">10–20%</div>
+        <div class="text-sm text-gray-600">Typical incremental recovery</div>
+      </div>
+      <div>
+        <div class="text-3xl font-extrabold">Founding offer</div>
+        <div class="text-sm text-gray-600">First 10 brands get full implementation free</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="container mx-auto px-4 py-14">
+    <h2 class="text-3xl font-extrabold">How it works</h2>
+    <p class="mt-2 text-gray-600 max-w-2xl">Three steps. Live in a week. You keep using your current stack—Shopify, Klaviyo, SMS.</p>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+        <div class="text-sm font-semibold text-indigo-600">Step 1</div>
+        <h3 class="mt-2 font-bold text-lg">Connect</h3>
+        <p class="mt-2 text-gray-600">Grant Shopify & Klaviyo access. Complete a 10‑minute brand intake (voice, objections, policies).</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+        <div class="text-sm font-semibold text-indigo-600">Step 2</div>
+        <h3 class="mt-2 font-bold text-lg">Install AI flows</h3>
+        <p class="mt-2 text-gray-600">We launch cart + browse abandon flows with behavioral copy and AOV‑aware incentives. 10% holdout enabled.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+        <div class="text-sm font-semibold text-indigo-600">Step 3</div>
+        <h3 class="mt-2 font-bold text-lg">Track lift</h3>
+        <p class="mt-2 text-gray-600">See recovered orders and incremental revenue in your dashboard. We tune weekly; you approve changes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="bg-gray-50 border-y border-gray-100">
+    <div class="container mx-auto px-4 py-14">
+      <h2 class="text-3xl font-extrabold">What’s inside</h2>
+      <p class="mt-2 text-gray-600 max-w-2xl">Everything you need for high‑performing recovery—no copy‑paste templates.</p>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+          <h3 class="font-bold">Behavioral copy</h3>
+          <p class="mt-2 text-gray-600">Different messages for first‑time vs. returning customers, and by product category.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+          <h3 class="font-bold">AOV‑aware incentives</h3>
+          <p class="mt-2 text-gray-600">Smart discounts and free‑shipping logic—never over‑incentivize low AOV carts.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+          <h3 class="font-bold">Smart timing</h3>
+          <p class="mt-2 text-gray-600">Send windows tuned to engagement by timezone and device; SMS quiet hours respected.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+          <h3 class="font-bold">Holdout & reporting</h3>
+          <p class="mt-2 text-gray-600">10% control group to prove true incremental lift inside Klaviyo.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+          <h3 class="font-bold">Deliverability guardrails</h3>
+          <p class="mt-2 text-gray-600">Warmed domains, link tracking, rate limiting, and safe send volumes.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+          <h3 class="font-bold">Done‑for‑you ops</h3>
+          <p class="mt-2 text-gray-600">We build, test, and iterate. Your team reviews results in a simple dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Flow Section (for the "See sample flow" button) -->
+  <section id="demo" class="container mx-auto px-4 py-14">
+    <h2 class="text-3xl font-extrabold">See a sample recovery flow</h2>
+    <p class="mt-2 text-gray-600 max-w-2xl">Here’s what a typical CartPilot AI abandoned cart journey looks like. We adapt timing, copy, and incentives for your brand and customers.</p>
+    <div class="mt-8 grid grid-cols-1 lg:grid-cols-4 gap-4">
+      <!-- Each block represents a step in the abandoned cart journey -->
+      <div class="p-5 bg-white rounded-2xl ring-muted hover-card">
+        <p class="text-xs font-semibold text-indigo-600 uppercase">T + 30 minutes</p>
+        <h3 class="mt-2 font-bold">Reminder (no discount)</h3>
+        <p class="mt-2 text-gray-600 text-sm">Short reminder email with product image, benefits, and direct link back to cart. No discount to protect margin.</p>
+      </div>
+      <div class="p-5 bg-white rounded-2xl ring-muted hover-card">
+        <p class="text-xs font-semibold text-indigo-600 uppercase">T + 20 hours</p>
+        <h3 class="mt-2 font-bold">Objection handling</h3>
+        <p class="mt-2 text-gray-600 text-sm">Answer common questions (sizing, ingredients, shipping, returns) and add social proof and reviews.</p>
+      </div>
+      <div class="p-5 bg-white rounded-2xl ring-muted hover-card">
+        <p class="text-xs font-semibold text-indigo-600 uppercase">T + 48 hours</p>
+        <h3 class="mt-2 font-bold">Smart incentive</h3>
+        <p class="mt-2 text-gray-600 text-sm">AOV‑aware incentive: small discount or free shipping for high‑intent carts only—no blanket offers.</p>
+      </div>
+      <div class="p-5 bg-white rounded-2xl ring-muted hover-card">
+        <p class="text-xs font-semibold text-indigo-600 uppercase">Optional SMS</p>
+        <h3 class="mt-2 font-bold">One‑tap return to cart</h3>
+        <p class="mt-2 text-gray-600 text-sm">Consent‑based SMS with a single deep link back to the cart, respecting quiet hours and opt‑outs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="container mx-auto px-4 py-14">
+    <h2 class="text-3xl font-extrabold">Estimate your monthly lift</h2>
+    <p class="mt-2 text-gray-600 max-w-2xl">Enter your store's <span class="font-semibold">monthly GMV (gross merchandise volume)</span>. We’ll estimate incremental revenue based on 8% initial recovery, 10–20% incremental recovery improvement and a 70% abandonment baseline.</p>
+    <!-- Align all three columns (GMV input, result, button) along the top for a cleaner row layout -->
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+      <!-- Input field for GMV, visually emphasized so it's obvious this is where to type -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Monthly GMV (USD)</label>
+        <input
+          id="gmv"
+          type="text"
+          placeholder="$50,000"
+          oninput="formatGMV(this)"
+          class="mt-1 w-full rounded-lg ring-muted px-3 h-11 font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
+        <p class="mt-1 text-xs text-gray-500">Use your typical total monthly sales before refunds.</p>
+      </div>
+      <!-- Read-only display of estimated incremental recovery -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Estimated incremental recovery / month</label>
+        <div id="lift" class="mt-1 h-11 flex items-center rounded-lg border border-dashed border-gray-300 px-3 text-sm text-gray-700">Enter GMV and click calculate</div>
+      </div>
+      <!-- Button to trigger calculation logic -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">&nbsp;</label>
+        <button onclick="calcLift()" class="mt-1 px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow-soft">Calculate</button>
+      </div>
+    </div>
+    <p id="roiNote" class="mt-3 text-sm text-gray-600">Result assumes conservative improvements; actuals verified via holdout.</p>
+  </section>
+
+  <script>
+    // Simple calculator for estimating incremental recovered revenue
+    function calcLift() {
+      // Get the raw value from the GMV input and strip out everything except digits
+      var raw = document.getElementById('gmv').value.replace(/[^0-9]/g, '');
+      var gmv = parseFloat(raw || 0);
+
+      // If GMV isn't positive, reset output and exit early
+      if (!gmv || gmv <= 0) {
+        document.getElementById('lift').innerText = 'Enter GMV and click calculate';
+        return;
+      }
+
+      /*
+        Assumptions:
+        - ~70% of potential orders are abandoned carts.
+        - Baseline recovery of those abandoned carts is 8%.
+        - CartPilot AI improves that recovered revenue by 10–20% (relative).
+
+        We calculate a range to keep the estimate conservative and transparent.
+      */
+      var baselineRecovered = gmv * 0.70 * 0.08; // baseline recovered revenue from abandoned carts
+      var low = baselineRecovered * 0.10;        // +10% relative improvement
+      var high = baselineRecovered * 0.20;       // +20% relative improvement
+
+      // Helper to format numbers as whole-dollar currency strings
+      var fmt = function (n) {
+        return '$' + Math.round(n).toLocaleString();
+      };
+
+      // Update UI with the estimated range per month
+      document.getElementById('lift').innerText = fmt(low) + ' – ' + fmt(high) + ' / mo';
+
+      // Update note to make ROI vs. a $997/mo fee explicit
+      document.getElementById('roiNote').innerText = 'At a typical full-price engagement of $997/mo, breakeven is around ' + fmt(997) + ' in extra recovered revenue; your range above shows likely upside. As a founding client, our implementation fee is waived.';
+    }
+
+    // Format GMV input live with a leading $ and thousands separators
+    function formatGMV(el) {
+      // Strip out any non-digit characters
+      var digits = el.value.replace(/[^0-9]/g, '');
+
+      // If nothing left, clear the field
+      if (!digits) {
+        el.value = '';
+        return;
+      }
+
+      // Convert to number and format with commas
+      var num = parseInt(digits, 10);
+      el.value = '$' + num.toLocaleString();
+    }
+  </script>
+
+  <!-- Offer / Pricing (reframed for founding free offer) -->
+  <section id="pricing" class="bg-gray-50 border-y border-gray-100">
+    <div class="container mx-auto px-4 py-14">
+      <h2 class="text-3xl font-extrabold">Founding client offer</h2>
+      <p class="mt-2 text-gray-600 max-w-2xl">We’re onboarding our first 10 Shopify brands as founding clients. You get the full CartPilot AI setup and optimization at no service fee in exchange for feedback and results we can turn into case studies.</p>
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <!-- Left: what's included, without showing a price -->
+        <div class="p-6 bg-white rounded-2xl ring-muted hover-card md:col-span-2">
+          <h3 class="font-bold text-lg">What’s included</h3>
+          <ul class="mt-4 space-y-2 text-gray-700">
+            <li class="check">Cart + browse abandon flows (email & SMS)</li>
+            <li class="check">Behavioral personalization & AOV‑aware incentives</li>
+            <li class="check">10% holdout & reporting inside Klaviyo</li>
+            <li class="check">Weekly tuning & deliverability guardrails</li>
+            <li class="check">Live in 7 business days</li>
+          </ul>
+          <p class="mt-4 text-sm text-gray-600">After the founding cohort, we’ll move to standard recurring pricing. As an early partner, you lock in preferential terms.</p>
+          <a href="https://calendar.app.google/DkKrMCrem9SqJU2P8" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold shadow-soft">Apply as a founding client</a>
+        </div>
+        <!-- Right: guarantee stays as social proof and risk reversal framing -->
+        <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+          <h3 class="font-bold">Guarantee</h3>
+          <p class="mt-2 text-gray-600">Once standard pricing is live, we’ll back it with a simple guarantee: if we don’t recover at least <span class="font-semibold">3× your monthly fee</span> in 30 days, you don’t pay.</p>
+          <p class="mt-2 text-gray-600">During the founding offer, you get the same level of work and measurement—without the service fee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container mx-auto px-4 py-14">
+    <h2 class="text-3xl font-extrabold">FAQ</h2>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+        <h3 class="font-bold">Do you replace Klaviyo?</h3>
+        <p class="mt-2 text-gray-600">No. CartPilot AI runs <em>inside</em> Klaviyo. We install flows and reporting; no rip‑and‑replace.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+        <h3 class="font-bold">How do you prove incremental lift?</h3>
+        <p class="mt-2 text-gray-600">We maintain a 10% control group (holdout) and attribute lift to the AI flows only.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+        <h3 class="font-bold">Will this hurt deliverability?</h3>
+        <p class="mt-2 text-gray-600">No. We use warmed domains, safe volume caps, and compliant templates with one‑click opt‑out.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+        <h3 class="font-bold">What access do you need?</h3>
+        <p class="mt-2 text-gray-600">Shopify collaborator access and Klaviyo admin. No PII is stored outside these platforms.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+        <h3 class="font-bold">Can we start with a pilot?</h3>
+        <p class="mt-2 text-gray-600">Yes. As a founding client, you effectively get a pilot with full implementation at no service fee.</p>
+      </div>
+      <div class="p-6 bg-white rounded-2xl ring-muted hover-card">
+        <h3 class="font-bold">Does this work with SMS consent?</h3>
+        <p class="mt-2 text-gray-600">Email works for all; SMS flows respect consent and quiet hours (TCPA/CAN‑SPAM).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Demo -->
+  <section id="book" class="bg-gray-50 border-y border-gray-100">
+    <div class="container mx-auto px-4 py-14">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-extrabold">Book a 15‑min demo</h2>
+        <p class="mt-2 text-gray-600">Pick a time that works. We’ll review your current setup, estimate lift, and confirm if you’re a fit for the founding offer.</p>
+      </div>
+      <div class="mt-6 p-4 bg-white rounded-2xl ring-muted shadow-soft flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <p class="text-sm text-gray-600">Booking is handled through Google Calendar. Click the button to open the scheduler in a new tab.</p>
+        <a
+          href="https://calendar.app.google/DkKrMCrem9SqJU2P8"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center px-6 py-3 rounded-xl bg-indigo-600 text-white text-sm font-semibold shadow-soft"
+        >
+          Open booking page
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container mx-auto px-4 py-10">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="flex items-center space-x-2">
+        <!-- Smaller logo variant with rocket icon for footer -->
+        <div class="w-8 h-8 rounded-md gradient flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Rocket body -->
+            <path d="M12 3C11 4.5 9 8 9 11C9 13 9.5 14 12 17C14.5 14 15 13 15 11C15 8 13 4.5 12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Window -->
+            <circle cx="12" cy="10" r="1.4" stroke="currentColor" stroke-width="1.4"/>
+            <!-- Fins -->
+            <path d="M9.5 14.5L7 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14.5 14.5L17 16.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Flame -->
+            <path d="M12 17C11.3 18 11 19 11.2 20C11.4 20.8 11.8 21.3 12 21.5C12.2 21.3 12.6 20.8 12.8 20C13 19 12.7 18 12 17Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="font-bold">CartPilot <span class="text-indigo-600">AI</span></span>
+      </div>
+      <div class="text-sm text-gray-600">© <span id="year"></span> CartPilot AI. All rights reserved.</div>
+      <div class="text-sm text-gray-600">Contact: <a href="mailto:dmytro@cartpilotai.com" class="text-indigo-600">dmytro@cartpilotai.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamically insert the current year into the footer so it stays up to date
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
